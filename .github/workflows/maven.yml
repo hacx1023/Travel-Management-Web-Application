@@ -1,0 +1,48 @@
+# Checkout code
+# Setup Java
+# Build WAR using Maven
+# Upload WAR as artifact
+# Build Docker Image
+name: Travel Management Web Application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+        
+    - name: Validate with Maven
+      uses: mvn validate@v4
+
+    - name: Compile with Maven
+      uses: mvn compile@v4
+
+    - name: Test with Maven
+      uses: mvn test@v4
+
+    - name: Package with Maven
+      uses: mvn package@v4
+
+    - name: Verify with Maven
+      uses: mvn verify@v4
+
+    - name: Install with Maven
+      uses: mvn install@v4
+
+
