@@ -31,10 +31,6 @@ jobs:
       run: mvn test
 
     - name: Package WAR with Maven
-      run: mvn package
+      run: mvn install package
 
-    - name: Verify with Maven
-      run: mvn verify
 
-    - name: Install with Maven
-      run: mvn install
