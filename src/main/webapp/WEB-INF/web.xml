@@ -1,0 +1,13 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="4.0">
+
+  <servlet>
+    <servlet-name>travel</servlet-name>
+    <servlet-class>com.travel.app.TravelServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>travel</servlet-name>
+    <url-pattern>/addTravel</url-pattern>
+  </servlet-mapping>
+
+</web-app>
