@@ -30,3 +30,6 @@ jobs:
         with:
           name: travel-management-war
           path: target/travel-management.war
+
+      - name: Build Docker Image
+        run: docker build -t travel-management:latest .
