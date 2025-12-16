@@ -24,4 +24,12 @@ jobs:
     - name: Package WAR with Maven
       run: mvn package
 
+    # Upload WAR artifact
+    - name: Upload WAR Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: travel-management-war
+        path: target/travel-management.war
+
+
 
